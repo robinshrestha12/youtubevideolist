@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Container, Row, Col } from 'react-bootstrap';
+import './youtubelist.css';
 
 
 function Youtubevideolist() {
@@ -24,15 +25,17 @@ function Youtubevideolist() {
                 {videos.map(video => (
                     <Col md={4} key={video.id}>
                         <Card >
-
+                            <div className="embed-responsive embed-responsive-16by9">
                             <iframe
+                                className="embed-responsive-item"
                                 width="560"
                                 height="315"
                                 src={`https://www.youtube.com/embed/${video.snippet.resourceId.videoId}`}
                                 frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
+                                allowFullScreen
                             ></iframe>
+                            </div>
                             <Card.Body>
                                 <Card.Title>{video.snippet.title}</Card.Title>
                                 <Card.Text>
