@@ -21,10 +21,14 @@ function Youtubevideolist() {
 
     return (
         <Container className="newspaper-style">
-            <Row>
-                {videos.map(video => (
-                    <Col md={4} key={video.id}>
-                        <Card >
+            <Row >
+                {videos.map((video, index) => (
+                  <Col xs={index === 0 ? 12 : 6} 
+                  md={index === 0 ? 12 : 4} 
+                  lg={index === 0 ? 8 : 4} 
+                  key={video.id}
+                  className={index === 0 ? "d-flex justify-content-center" : ""}>
+                   <Card className={index === 0 ? 'feature-video' : ''}>
                             <div className="embed-responsive embed-responsive-16by9">
                             <iframe
                                 className="embed-responsive-item"

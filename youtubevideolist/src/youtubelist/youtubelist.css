@@ -1,7 +1,11 @@
-.newspaper-style .card {
+.newspaper-style .card:not(.feature-video) {
   width: 100%;
-  max-width: 70%;
-  margin: 20px auto; /* For some space between the cards */
+  margin: 60px auto; /* Add spacing between the cards */
+}
+
+.newspaper-style .feature-video {
+  width: 75%;
+  margin: 20px auto; /* Add spacing below the featured video */
 }
 
 .embed-responsive {
