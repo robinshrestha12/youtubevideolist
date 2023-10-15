@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Card, Container, Row, Col, Button } from 'react-bootstrap';
+import {useNavigate} from "react-router-dom";    
 import './youtubelist.css';
 
 
@@ -18,7 +19,12 @@ function Youtubevideolist() {
             })
             .catch(error => console.error('Error fetching YouTube videos:', error));
     }, []);
+    // const navigate = useNavigate(); // Access the history object
 
+    // const handleReadMore = (videoId) => {
+    //     // Navigate to the detailed video page
+    //    navigate(`/video/${videoId}`);
+    // }
     return (
         <Container className="newspaper-style">
             <Row >
@@ -42,9 +48,10 @@ function Youtubevideolist() {
                             </div>
                             <Card.Body>
                                 <Card.Title>{video.snippet.title}</Card.Title>
-                                <Card.Text>
+                                <Card.Text className="truncate-text">
                                     {video.snippet.description}
                                 </Card.Text>
+                                <Button variant="link" >Read More</Button>
                             </Card.Body>
                         </Card>
                     </Col>
