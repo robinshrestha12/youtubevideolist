@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function VideoDetail() {
-    const { videoId } = useParams();
-    const [videoDetail, setVideoDetail] = useState(null);
+    const location = useLocation();
+    const videoDetail = location.state?.video; // Use optional chaining to access video safely
 
-    // Fetch video details (like title, description) using videoId
-    // Update state using setVideoDetail
-
+    // If videoDetail is not available, return an error message or loading state
+    if (!videoDetail) {
+        return <div>Video not found or no details available.</div>;
+    }
     return (
-        <div>
+        <div style={{ width: '60vw', height: '60vh'}}>
             <iframe
-                src={`https://www.youtube.com/embed/${videoId}`}
-                // ... other props
+                style={{ width: '100%', height: '100%' }}
+                src={`https://www.youtube.com/embed/${videoDetail.snippet.resourceId.videoId}`}                
+                frameBorder="0"
+                allowFullScreen
+                title={videoDetail.snippet.title}
             ></iframe>
             {videoDetail && (
                 <>

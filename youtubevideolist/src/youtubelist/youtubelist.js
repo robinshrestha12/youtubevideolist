@@ -24,10 +24,10 @@ function Youtubevideolist() {
     }, []);
     const navigate = useNavigate(); // Access the history object
 
-    const handleReadMore = (videoId) => {
-    //Navigate to the detailed video page
-    navigate(`/video/${videoId}`);
-     }
+    const handleReadMore = (video) => {
+        // Make sure that "video" is the video object that has a "snippet" property with a "resourceId" object inside
+        navigate(`/video/${video.snippet.resourceId.videoId}`, { state: { video: video } });
+    }
 
   
     return (
@@ -56,7 +56,7 @@ function Youtubevideolist() {
                                 <Card.Text className="truncate-text">
                                     {video.snippet.description}
                                 </Card.Text>
-                                <Button variant="link"onClick={() => handleReadMore(video.snippet.resourceId.videoId)}>Read More</Button>
+                                <Button variant="link"onClick={() => handleReadMore(video)}>Read More</Button>
                             </Card.Body>
                         </Card>
                     </Col>
