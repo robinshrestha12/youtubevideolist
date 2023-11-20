@@ -52,7 +52,7 @@ function Youtubevideolist() {
                             ></iframe>
                             </div>
                             <Card.Body>
-                                <Card.Title>{video.snippet.title}</Card.Title>
+                                <Card.Title className="card-title-fixed-height">{video.snippet.title}</Card.Title>
                                 <Card.Text className="truncate-text">
                                     {video.snippet.description}
                                 </Card.Text>

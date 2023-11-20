@@ -1,36 +1,39 @@
-.newspaper-style .card:not(.feature-video) {
-  width: 100%;
-  margin: 60px auto; /* Add spacing between the cards */
+.newspaper-style .card {
+  width: 100%; /* Full width of its column */
+  margin-bottom: 20px; /* Spacing between cards */
 }
 
+/* Specific style for feature video card */
 .newspaper-style .feature-video {
-  width: 75%;
-  margin: 20px auto; /* Add spacing below the featured video */
+  /* If you need a specific height for the feature video, adjust it here */
+}
+
+/* Standard style for other cards */
+.newspaper-style .card:not(.feature-video) {
+  /* If you need a specific height for regular video cards, adjust it here */
+  overflow: hidden; /* Hide overflow content */
 }
 
 .embed-responsive {
   position: relative;
   display: block;
   width: 100%;
-  padding: 0;
-  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
-.embed-responsive::before {
-  display: block;
-  content: "";
-  padding-top: 56.25%;  /* 16:9 aspect ratio */
-}
-
-.embed-responsive .embed-responsive-item {
+.embed-responsive-item {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /* This should fill the container */
   border: 0;
 }
+
+.card-text {
+  font-size: 0.8rem; /* Smaller font size for description */
+}
+
 .truncate-text {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -38,3 +41,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.card-title-fixed-height {
+  line-height: 1.2em;
+  height: 3.6em; /* 3 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
