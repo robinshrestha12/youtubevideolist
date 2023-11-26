@@ -6,12 +6,14 @@
 /* Specific style for feature video card */
 .newspaper-style .feature-video {
   /* If you need a specific height for the feature video, adjust it here */
+  height: auto;
 }
 
 /* Standard style for other cards */
 .newspaper-style .card:not(.feature-video) {
   /* If you need a specific height for regular video cards, adjust it here */
   overflow: hidden; /* Hide overflow content */
+  height: auto;
 }
 
 .embed-responsive {
