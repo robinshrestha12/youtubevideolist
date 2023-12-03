@@ -1,0 +1,7 @@
+.video-detail-content {
+  color: white; /* Ensures text is white */
+  background-color: #282c34; /* Same background color as .App-header */
+  padding: 20px; /* Add some padding for better readability */
+  margin-top: 20px; /* Space above the content */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+}

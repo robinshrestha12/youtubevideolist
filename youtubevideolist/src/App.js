@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>Youtube video list.</div>
+        <div className='HeadText'>YouTube Video Lists</div>
         <Router>
           <Routes>
             <Route path="/video/:videoId" element={<VideoDetail />} />

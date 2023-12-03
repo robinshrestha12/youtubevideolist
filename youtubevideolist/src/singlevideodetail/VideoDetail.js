@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import './VideoDetail.css';
 
 function VideoDetail() {
     const location = useLocation();
@@ -19,10 +20,10 @@ function VideoDetail() {
                 title={videoDetail.snippet.title}
             ></iframe>
             {videoDetail && (
-                <>
+                <div className="video-detail-content">
                     <h1>{videoDetail.snippet.title}</h1>
                     <p>{videoDetail.snippet.description}</p>
-                </>
+                </div>
             )}
         </div>
     );

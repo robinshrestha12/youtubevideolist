@@ -6,6 +6,20 @@
   height: 40vmin;
   pointer-events: none;
 }
+html,body {
+  background-color: #282c34;
+  /* Sets the background color to black */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  color: white; /* Sets the default text color to white */
+}
+.HeadText{
+  font-size: larger;
+  font-weight: bold;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
